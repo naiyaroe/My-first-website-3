@@ -1,0 +1,196 @@
+<html>
+<head>
+  <style>
+    h1{
+      text-align: center;
+      color:#F4F1DE;
+      background-color: #E07A5F;
+      height:180px;
+      font-size: 72px;
+      width:90%;
+      margin: 0 auto;
+      border-radius: 10px;
+      border: 10px solid #3D405B;
+    }
+    body {
+      background-color:#F2CC8F;
+    }
+    h2 {
+      background-color:#3D405B;
+      color:#F4F1DE;
+      width:90%;
+      height:50px;
+      font-size: 36px;
+      margin:0 auto;
+      text-align:center;
+      padding:8px;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: 10px solid #E07A5F;
+    }
+.genres {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+.card {
+  height: 500px;
+  background-color: #81B29A;
+  padding:10px;
+  width: 35%;
+  text-align:center;
+  margin-top: 20px;
+  color:white;
+  font-size: 24px;
+}
+h3{
+  border: 10px solid #3D405B;
+  margin-top: 2px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.content-box {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+}
+.song{
+  width:40%;
+  background-color:#E07A5F;
+  border-radius:10px;
+  font-size: 14px;
+  margin-bottom: 8px;
+  padding:5px;
+  visibility:hidden;
+}
+</style>
+<body>
+  <h1>
+  Music Inspo Generator
+  </h1>
+  <h2>
+    An Application Made By Naiya Roe
+  </h2>
+<div class="genres">
+  <div class="card" id="HipCards">
+    <h3>
+      Hip Hop
+    </h3>
+  <div class="content-box">
+    <div class="song">
+      <p>
+        Walk it Talk it by (feat Drake) Migos
+      </p>
+    </div>
+    <div class="song">
+      <p>
+        This is America by Childish Gambino
+      </p>
+    </div>
+    <div class="song">
+      <p>
+        Say A' by A Boogie
+      </p>
+    </div>
+    <div class="song">
+      <p>
+        Only by Nicki Minaj, Drake, Lil Wayne
+      </p>
+    </div>
+    <div class="song">
+      <p>
+        Exchange by Bryson Tiller
+      </p>
+    </div>
+    <div class="song">
+      <p>
+        Ultralight Beam by Kanye West
+      </p>
+    </div>
+  </div>
+    <button id="HipButton" onclick="showHipSong()"> Add a song! </button>
+  </div>
+  <div class="card">
+    <h3>
+      Pop
+    </h3>
+  </div>
+  <div class="card">
+    <h3>
+      R&B
+    </h3>
+  </div>
+  <div class="card">
+      <h3>
+        Rock
+      </h3>
+  </div>
+  <div class="card">
+        <h3>
+          Classical
+        </h3>
+  </div>
+  <div class="card">
+        <h3>
+            Musical Theatre
+        </h3>
+  <div class="content-box" id="MTcards">
+      <div class="song">
+        <p>
+          "You Will Be Found" by the cast of Dear Evan Hansen
+        </p>
+      </div>
+      <div class="song">
+        <p>
+          "Move in my Mind" by the cast of Miss Saigon
+        </p>
+      </div>
+      <div class="song">
+        <p>
+          "Who Lives, Who Dies, Who Tells Your Story" by the cast of Hamilton
+        </p>
+      </div>
+      <div class="song">
+        <p>
+          "For Good" by the cast of Wicked
+        </p>
+      </div>
+      <div class="song">
+        <p>
+          "96,000" by the cast of In the Heights
+        </p>
+      </div>
+      <div class="song">
+        <p>
+          "Candy Store" by the cast of Heathers
+        </p>
+      </div>
+      <button id="MTbutton" onclick="showMTSong()"> Add a song! </button>
+  </div>
+  </div>
+  </div>
+
+</div>
+<script>
+var counter = 1
+function showHipSong(){
+  var HipSong = document.querySelector("#HipCards :nth-child("+counter+")")
+  console.log(HipSong)
+  counter = counter + 1
+  HipSong.style.visibility="visible"
+}
+var counter = 1
+function showMTSong(){
+  var mtsong = document.querySelector("#MTcards :nth-child("+counter+")")
+  console.log(mtsong)
+  counter = counter + 1
+  mtsong.style.visibility="visible"
+}
+
+</script>
+</body>
+</head>
+</html>
