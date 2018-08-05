@@ -15,7 +15,7 @@
     body {
       background-color:#F2CC8F;
     }
-    h2 {
+    h2{
       background-color:#3D405B;
       color:#F4F1DE;
       width:90%;
@@ -36,10 +36,10 @@
 
 }
 .card {
-  height: 500px;
+  height: 450px;
   background-color: #81B29A;
   padding:10px;
-  width: 35%;
+  width: 300px;;
   text-align:center;
   margin-top: 20px;
   color:white;
@@ -66,6 +66,19 @@ h3{
   padding:5px;
   visibility:hidden;
 }
+.instructions {
+  background-color: #E07A5F;
+  color: #3D405B;
+  width:90%;
+  height:200px;
+  font-size: 25px;
+  margin:0 auto;
+  text-align:center;
+  padding:8px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 10px solid #F4F1DE;
+}
 </style>
 <body>
   <h1>
@@ -74,15 +87,18 @@ h3{
   <h2>
     An Application Made By Naiya Roe
   </h2>
+  <p class="instructions">
+      Instructions: This app is for all of those people who are in music funks and can't think of what music to listen to. This app is a simple way to get a few suggestions by going under each of the genres and clicking the button. Once the button is clicked, a song suggeston comes up! Each song will have a link to where you can listen to it on Spotify. There is also a space where you can add your own songs for when you find some but don't want to rememebr it. Have fun!
+  </p>
 <div class="genres">
-  <div class="card" id="HipCards">
+  <div class="card">
     <h3>
       Hip Hop
     </h3>
-  <div class="content-box">
+  <div class="content-box" id="HipCards">
     <div class="song">
       <p>
-        Walk it Talk it by (feat Drake) Migos
+        <a href="https://open.spotify.com/track/6n4U3TlzUGhdSFbUUhTvLP"> Walk it Talk it by (feat Drake) Migos </a>
       </p>
     </div>
     <div class="song">
@@ -117,20 +133,125 @@ h3{
     <h3>
       Pop
     </h3>
+  <div class="content-box" id="PopCards">
+    <div class="song">
+      <p>
+        <a href="https://open.spotify.com/album/2AkKk7DFnT2IV1gPcq7RCQ">
+        No Tears Left to Cry by Ariana Grande
+      </a>
+      </p>
+    </div>
+    <div class="song">
+      <p>
+        Sugar by Maroon 5
+      </p>
+    </div>
+    <div class="song">
+      <p>
+        Formation by Beyonce
+      </p>
+    </div>
+    <div class="song">
+      <p>
+        Man Down by Rihanna
+      </p>
+    </div>
+    <div class="song">
+      <p>
+        Mirrors by Justin Timberlake
+      </p>
+    </div>
+    <div class="song">
+      <p>
+        That's What I Like by Bruno Mars
+      </p>
+    </div>
+    <button onclick="showPopSong()"> Add a song! </button>
   </div>
+</div>
   <div class="card">
     <h3>
       R&B
     </h3>
+    <div class="content-box" id="RBCards">
+      <div class="song">
+        <p>
+          <a href="https://open.spotify.com/track/0At2qAoaVjIwWNAqrscXli">
+      Boo'd Up by Ella Mai
+    </a>
+        </p>
+      </div>
+      <div class="song">
+        <p>
+      February 3rd by Jorja Smith
+        </p>
+      </div>
+      <div class="song">
+        <p>
+      High by Alina Baraz
+        </p>
+      </div>
+      <div class="song">
+        <p>
+      Wasted Times by The Weeknd
+        </p>
+      </div>
+      <div class="song">
+        <p>
+      I Like That by Janelle Monáe
+        </p>
+      </div>
+      <div class="song">
+        <p>
+      Naked by Ella Mai
+        </p>
+      </div>
+    </div>
+      <button onclick="showRBSong()"> Add a song! </button>
   </div>
   <div class="card">
       <h3>
-        Rock
+        Oldies
       </h3>
+      <div class="content-box" id="OldCards">
+        <div class="song">
+          <p>
+            <a href="https://open.spotify.com/track/2WfaOiMkCvy7F5fcp2zZ8L">
+            Take on Me by a-ha
+          </a>
+          </p>
+        </div>
+        <div class="song">
+            <p>
+              Time after Time by Cyndi Lauper
+          </p>
+        </div>
+        <div class="song">
+            <p>
+              Girls Just Want to Have Fun by Cyndi Lauper
+          </p>
+        </div>
+        <div class="song">
+            <p>
+              Don't Stop Believing by Journey
+          </p>
+        </div>
+        <div class="song">
+            <p>
+              Total Eclipse of he Heart by Bonnie Tyler
+          </p>
+        </div>
+        <div class="song">
+            <p>
+              Footloose by Kenny Loggins
+          </p>
+        </div>
+      <button onclick="showOldSong()"> Add a song! </button>
+  </div>
   </div>
   <div class="card">
         <h3>
-          Classical
+          Your Own!
         </h3>
   </div>
   <div class="card">
@@ -140,8 +261,10 @@ h3{
   <div class="content-box" id="MTcards">
       <div class="song">
         <p>
+          <a href="https://open.spotify.com/track/1H7Zqkq54andtaSSnLRrfp">
           "You Will Be Found" by the cast of Dear Evan Hansen
-        </p>
+</a>
+        </p>  
       </div>
       <div class="song">
         <p>
@@ -175,21 +298,41 @@ h3{
 
 </div>
 <script>
-var counter = 1
+var hipCounter = 1
 function showHipSong(){
-  var HipSong = document.querySelector("#HipCards :nth-child("+counter+")")
+  var HipSong = document.querySelector("#HipCards :nth-child("+hipCounter+")")
   console.log(HipSong)
-  counter = counter + 1
+  hipCounter = hipCounter + 1
   HipSong.style.visibility="visible"
 }
-var counter = 1
+var MTcounter = 1
 function showMTSong(){
-  var mtsong = document.querySelector("#MTcards :nth-child("+counter+")")
+  var mtsong = document.querySelector("#MTcards :nth-child("+MTcounter+")")
   console.log(mtsong)
-  counter = counter + 1
+  MTcounter = MTcounter + 1
   mtsong.style.visibility="visible"
 }
-
+var PopCounter = 1
+function showPopSong(){
+  var popsong = document.querySelector("#PopCards :nth-child("+PopCounter+")")
+  console.log(popsong)
+  PopCounter = PopCounter + 1
+  popsong.style.visibility="visible"
+}
+var OldCounter = 1
+function showOldSong(){
+  var Oldsong = document.querySelector("#OldCards :nth-child("+OldCounter+")")
+  console.log(Oldsong)
+  OldCounter = OldCounter + 1
+  Oldsong.style.visibility="visible"
+}
+var RBCounter = 1
+function showRBSong(){
+  var RBsong = document.querySelector("#RBCards :nth-child("+RBCounter+")")
+  console.log(RBsong)
+  RBCounter = RBCounter + 1
+  RBsong.style.visibility="visible"
+}
 </script>
 </body>
 </head>

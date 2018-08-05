@@ -45,6 +45,7 @@ h3 {
   margin-top: 20px;
   margin-bottom: 5px;
   font-family: 'Alegreya Sans SC', sans-serif;
+  visibility:hidden;
 }
 #allaboutme {
   color: black;
@@ -66,7 +67,7 @@ h4 {
   margin: 0 auto;
   margin-top: 20px;
   font-family: 'Alegreya Sans SC', sans-serif;
-
+  visibility:hidden;
   margin-bottom: 5px
 }
 #projects {
@@ -82,16 +83,17 @@ h4 {
 }
 h5 {
   background-color:#6C5B7B;
-  font-size: 25px;
+  font-size: 36px;
   text-align: center;
   color: black;
   border: white;
   width: 40%;
   border:  3px dotted white;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 10px;px;
   margin-bottom: 5px;
   font-family: 'Alegreya Sans SC', sans-serif;
+  visibility: hidden;
 }
 #ethicals {
   color: black;
@@ -102,6 +104,8 @@ h5 {
   font-family: 'Rajdhani', sans-serif;
   text-align: center;
   padding: 10px;
+  font-size:25px;
+
 }
 #buttons {
   margin:0 auto;
@@ -128,32 +132,13 @@ h5 {
   margin: 0 auto;
   visibility: hidden;
   position: absolute;
-  left: 100px
+  left: 100px;
+  margin-top:100px;
 }
 #buttons a:active {
   transform: translateY(2px);
 }
 </style>
-<script>
-function showBio() {
-  var bio = document.getElementById("allaboutme")
-  bio.style.visibility = "visible";
-  projects.style.visibility = "hidden";
-  ethicals.style.visibility = "hidden";
-}
-function showProjects () {
-  var projects = document.getElementById("projects")
-  projects.style.visibility = "visible";
-  bio.style.visibility = "hidden";
-  ethicals.style.visibility = "hidden";
-}
-function showEthicals () {
-  var ethicals = document.getElementById("ethicals")
-  ethicals.style.visibility = "visible";
-  bio.style.visibility = "hidden";
-  projects.style.visibility = "hidden";
-}
-</script>
 </head>
 <body>
 <h1> Naiya Martine Roe </h1>
@@ -163,7 +148,8 @@ function showEthicals () {
   <a onclick="showProjects()"> Projects </a>
   <a onclick="showEthicals()"> Ethical Reflections </a>
 </div>
-<h3> <strong>All About Me!</strong> </h3>
+
+<h3 id="bioheader"> <strong>All About Me!</strong> </h3>
 <div class="content-box" id="allaboutme">
   <p>
     <strong>Hey, I'm Naiya! Here are some facts about me:
@@ -179,25 +165,56 @@ function showEthicals () {
    </ul>
   <p> This website is a place that I will put all of my future work, including projects and ethical reflections.</strong> </p>
 </div>
-<h4> Projects </h5>
+<h4 id="projectsheader"> Projects </h5>
   <div class="content-box"id="projects"
   <ul>
     <li> <strong> <a href="https://naiyaroe.github.io/My-first-website-3/"> Project 1 </a>  - Making my own portfolio which is this website! </li>
-    <li> Project 2 </li>
-    <li> Project 3 </li>
-    <li> Project 4 </li>
-    <li> Project 5 </strong> </li>
+    <li> <a href="EthicalReflection/app.html"> Project 2 </a>- An Application called the Music Inspo Generator</li>
+    <li> <a href="https://talaalmond01.github.io/Swatch/"> Project 3 </a> - Developing a Website Designed by A Client</li>
+    <li> <a href="EthicalReflection/app.html"> Project 4</a> -Extension of my Music Inspo Generator</strong></li>
   </ul>
 </div>
-<h5> Ethical Reflections </h5>
+<h5 id="ethicalsheader"> Ethical Reflections </h5>
 <div class="content-box" id="ethicals"
   <ul>
-    <li> <strong> <a href="EthicalReflection/ER1.html"> ER 1 </a> </li>
-    <li> <a href="EthicalReflection/ER2.html"> ER 2 </a> </li>
-    <li> ER 3 </li>
-    <li> <a href="EthicalReflection/ER4.html"> ER 4 </a> </li>
-    <li> ER 5 </strong> </li>
+    <li> <strong> <a href="EthicalReflection/ER1.html"> ER 1 </a> - Machine Bias </li>
+    <li> <a href="EthicalReflection/ER2.html"> ER 2 </a> - Ad Dystopia</li>
+    <li> ER 3 - Net Neutrality</li>
+    <li> <a href="EthicalReflection/ER4.html"> ER 4 </a> - Automation and the Economy </li>
   </ul>
 </div>
+<script>
+var bio = document.getElementById("allaboutme")
+var bioheader = document.getElementById("bioheader")
+var projects = document.getElementById("projects")
+var projectsheader = document.getElementById("projectsheader")
+var ethicals = document.getElementById("ethicals")
+var ethicalsheader = document.getElementById("ethicalsheader")
+
+function showBio() {
+  bio.style.visibility = "visible";
+  bioheader.style.visibility="visible"
+  projectsheader.style.visibility="hidden"
+  ethicalsheader.style.visibility="hidden"
+  projects.style.visibility = "hidden";
+  ethicals.style.visibility = "hidden";
+}
+function showProjects () {
+  projects.style.visibility = "visible";
+  projectsheader.style.visibility="visible"
+  ethicalsheader.style.visibility="hidden"
+  bioheader.style.visibility="hidden"
+  bio.style.visibility = "hidden";
+  ethicals.style.visibility = "hidden";
+}
+function showEthicals () {
+  ethicals.style.visibility = "visible";
+  ethicalsheader.style.visibility="visible"
+  projectsheader.style.visibility="hidden"
+  bio.style.visibility = "hidden";
+  bioheader.style.visibility="hidden"
+  projects.style.visibility = "hidden";
+}
+</script>
 </body>
 </html>
